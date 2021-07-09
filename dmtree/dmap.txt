@@ -1,0 +1,37 @@
+# slot/intent最大化映射到domain(所有可能性,用户定制化除外)
+# add guess/sure flag
+# 待兼容逻辑-domain/intent冲突
+# 待兼容逻辑-多intent仲裁(e.g.打开导航)
+slot.object.app.appname.wecar; domain.op.service.app.wecar
+slot.object.app.appname.wechat; domain.op.service.app.wx
+slot.object.app.apppage; domain.op.service.app.page
+slot.object.app.appname; domain.op.service.app
+slot.object.app.property; domain.op.service.app, domain.op.service.app.page
+slot.object.device; domain.op.service.control
+domain.op.control; domain.op.service.control
+domain.op.msgcall; domain.op.service.msgcall
+domain.op.geonavi; domain.op.geonavi.navi
+domain.op.app; domain.op.service.app, domain.op.service.app.page
+domain.dialog.weather; domain.dialog.search.realtime.weather
+domain.dialog.lbs; domain.dialog.search.realtime.lbs, domain.dialog.search.realtime.traffic
+domain.dialog.kgsearch; domain.dialog.search.kg.common, domain.dialog.search.kg.explore, domain.dialog.search.manual
+domain.dialog.other; domain.dialog.search.kg.other, domain.dialog.search.realtime.other, domain.dialog.search.realtime.time
+intent.move.stop; domain.op.service.app.wx, domain.op.service.app.wecar, domain.op.service.app.page, domain.op.service.app, domain.op.service.control
+intent.move.back; domain.op.service.app.wx, domain.op.service.app.wecar, domain.op.service.app.page, domain.op.service.app, domain.op.service.control
+intent.move.close; domain.op.service.app.wx, domain.op.service.app.wecar, domain.op.service.app.page, domain.op.service.app, domain.op.service.control
+intent.move.open; domain.op.service.app.wx, domain.op.service.app.wecar, domain.op.service.app.page, domain.op.service.app, domain.op.service.control
+intent.move.switch; domain.op.service.app.wx, domain.op.service.app.wecar, domain.op.service.app.page, domain.op.service.app, domain.op.service.control
+intent.qa.info; domain.dialog.search.realtime.other, domain.dialog.search.realtime.time
+intent.qa.kg; domain.dialog.search.kg.other, domain.dialog.search.realtime.other, domain.dialog.search.realtime.time
+intent.qa.weather; domain.dialog.search.realtime.weather
+intent.qa.nearby; domain.dialog.search.realtime.lbs
+intent.qa.traffic; domain.dialog.search.realtime.traffic
+intent.op.setting; domain.op.service.app, domain.op.service.app.page, domain.op.service.control
+intent.op.navi; domain.op.geonavi.navi
+intent.op.alarm 
+intent.op.watch
+intent.op.play 
+intent.op.play.song 
+slot.object.geoloc.area
+slot.object.geoloc.public
+slot.object.geoloc.userset

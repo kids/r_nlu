@@ -1,0 +1,2 @@
+顺路; .*?(?:导航去|导航到|导航回|查询去|去)(.*?)(?:顺路去|，顺路去|顺路回|，顺路回|中途去|顺路|路上路过|路过)([^的]*?)(?:要|需要|有|$).*?$; domain.op.geonavi.navi; slot.object.geoloc.poi.destination, slot.object.geoloc.poi.bypass
+为; .*?(?:把|将|变更|修改|搜索|设置|找出|.*?)(.*?)(?:并)?(?:为|修改为|改变为|设置成为|设置成|设置为|设为|变更为|调整为|转为|改为|转换为|变成|变为|调为|定为|切为)(.*?)$; domain.other.setting; slot.object.other, slot.object.other

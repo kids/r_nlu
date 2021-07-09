@@ -1,0 +1,26 @@
+syntax = "proto3";
+
+package trpc.wecar_roi_s_app.wecar_roi_dmtree;
+
+option py_generic_services = true;
+
+service DMatch {
+  rpc MatchStr (ReqBody) returns (RepBody) {}
+}
+
+message ReqBody {
+  string msg = 1;
+}
+
+message Slot {
+  string sname = 1;
+  string stext = 2;
+}
+
+message RepBody {
+  string domain = 1;
+  string intent = 2;
+  repeated Slot slots = 3;
+  int32 status = 4;
+  string errmsg = 5;
+}
