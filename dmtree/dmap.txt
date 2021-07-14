@@ -6,7 +6,7 @@ slot.object.app.appname.wecar; domain.op.service.app.wecar
 slot.object.app.appname.wechat; domain.op.service.app.wx
 slot.object.app.apppage; domain.op.service.app.page
 slot.object.app.appname; domain.op.service.app
-slot.object.app.property; domain.op.service.app, domain.op.service.app.page
+slot.object.app.property; domain.op.service.app, domain.op.service.app.page, domain.op.service.app.wecar, domain.op.service.app.wx
 slot.object.device; domain.op.service.control
 domain.op.control; domain.op.service.control
 domain.op.msgcall; domain.op.service.msgcall

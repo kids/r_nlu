@@ -1854,8 +1854,11 @@ slot.object.app.apppage,白昼模式
 slot.object.app.apppage,黑夜模式
 slot.object.app.apppage,白天模式
 slot.object.app.apppage,夜光模式
-slot.object.app.apppage,夜光模式
-slot.object.app.apppage,夜光模式
+slot.object.app.apppage,喜马拉雅首页
+slot.object.app.apppage,喜马拉雅主界面
+slot.object.app.apppage,喜马拉雅设置
+slot.object.app.apppage,qq音乐设置
+slot.object.app.apppage,腾讯视频设置
 slot.object.device,360,全景影像
 slot.object.device,360全景,全景影像
 slot.object.device,360全景影像,360全景影像
@@ -1994,6 +1997,7 @@ slot.object.device,室内灯,车内灯
 slot.object.device,导航仪,行车记录仪
 slot.object.device,导航巡航,导航巡航
 slot.object.device,导航电子眼播报,导航电子眼播报
+slot.object.device,电子眼
 slot.object.device,小灯,示宽灯
 slot.object.device,尾灯,尾灯
 slot.object.device,尾门,后背门
@@ -3607,7 +3611,6 @@ slot.object.person.singer,你永远不懂我,你永远不懂我
 slot.object.person.singer,你的大表哥曲甲,你的大表哥曲甲
 slot.object.person.singer,侃侃,侃侃
 slot.object.person.singer,侧田,侧田
-slot.object.person.singer,信,苏见信
 slot.object.person.singer,信乐团,信乐团
 slot.object.person.singer,倪尔萍
 slot.object.person.singer,倪莫问,倪莫问
@@ -4017,7 +4020,7 @@ slot.object.person.singer,本兮,本兮
 slot.object.person.singer,朱之文,朱之文
 slot.object.person.singer,朴树,朴树
 slot.object.person.singer,朴灿烈,朴灿烈
-slot.object.person.singer,权志龙,G
+slot.object.person.singer,权志龙
 slot.object.person.singer,李丹阳
 slot.object.person.singer,李丽芬,李丽芬
 slot.object.person.singer,李之繁,李之繁
@@ -7420,6 +7423,9 @@ slot.object.app.appname.wecar,加油账本
 slot.object.app.appname.wecar,北京台
 slot.object.app.appname.wecar,印象笔记
 slot.object.app.appname.wecar,去加油
+slot.other,去加油站
+slot.other,先去加油
+slot.other,然后去加油
 slot.object.app.appname.wecar,去哪儿景区门票
 slot.object.app.appname.wecar,口袋故事
 slot.object.app.appname.wecar,司机请回答
@@ -7562,8 +7568,8 @@ slot.object.app.appname.wecar,驴妈妈
 slot.object.app.appname.wecar,驴迹车载导游
 slot.object.app.appname.wecar,驾御自驾游
 slot.object.app.appname.wecar,麦当劳
-slot.object.app.property,小程序,小场景
-slot.object.app.property,app
+# slot.object.app.property,小程序,小场景
+# slot.object.app.property,app
 slot.property,不走高速
 slot.property,走高速
 slot.property,最快优先
@@ -7575,6 +7581,7 @@ slot.property,少收费
 slot.property,避免收费
 slot.property,避开限行
 slot.property,躲避拥堵
+slot.property,最近的路
 slot.property,设置的
 slot.property,下一个
 slot.property,上一个
@@ -7611,6 +7618,7 @@ intent.move.close,退下
 intent.move.stop,停止
 intent.move.stop,结束
 intent.move.stop,取消
+intent.move.stop,暂停
 intent.move.stop,撤销
 intent.move.stop,不去
 intent.move.stop,不想看
@@ -7692,15 +7700,17 @@ intent.qa.nearby,附近哪里有
 intent.qa.nearby,附近最近的
 intent.qa.nearby,附近有
 intent.qa.nearby,附近有没有
+intent.qa.nearby,附近
 intent.qa.nearby,在哪里>
 intent.qa.count,有几个
 intent.qa.speedlimit,限速
 intent.qa.accesslimit,限行
 intent.qa.traffic,路况
 intent.qa.traffic,堵不堵>
-intent.qa.howlong,要多久>
-intent.qa.howlong,要多长时间>
-intent.qa.howlong,要多少时间>
-intent.qa.howlong,有多远>
-intent.qa.howlong,要几个小时>
-intent.qa.howlong,多少公里>
+intent.qa.howlong,要多久
+intent.qa.howlong,要走多久
+intent.qa.howlong,要多长时间
+intent.qa.howlong,要多少时间
+intent.qa.howlong,有多远
+intent.qa.howlong,要几个小时
+intent.qa.howlong,多少公里

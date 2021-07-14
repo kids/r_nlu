@@ -70,7 +70,7 @@ class Utils():
 
     @staticmethod
     def qstrip(s):
-        for w in ['请','麻烦','请你','帮我','替我','你好']:
+        for w in ['请','麻烦','请你','帮我','替我','你好','为我']:
             s = s.lstrip(w)
         for w in ['呢','呀','吧']:
             s = s.rstrip(w)

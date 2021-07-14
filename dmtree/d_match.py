@@ -25,7 +25,8 @@ class UService():
         self.mslot = PTree(self.tree, self.dmap)
         self.mreg = PReg(self.reg)
         # TODO put on rainbow and Polaris
-        mdlurl = base64.b64decode(b'aHR0cDovLzEwOS4yNDQuMjU1LjE0OjgwODAvZG0/c3RyPQ==').decode()
+        mdlurl = base64.b64decode(
+            b'aHR0cDovLzEwOS4yNDQuMjU1LjE0OjgwODAvZG0/c3RyPQ==').decode()
         sentence_cut_len = 29
         self.mmdl = PModel(mdlurl, sentence_cut_len)
         self.sentence_max_len = 128
@@ -76,7 +77,8 @@ class UService():
 
         for i, w in enumerate(text):
             if w not in d_text_type:
-                sw = [[s[1][0], s[0]] for s in segs if s[0] in w and len(s[1])==1 and 'intent' not in s[1][0]]
+                sw = [[s[1][0], s[0]] for s in segs
+                     if s[0] in w and len(s[1])==1 and 'intent' not in s[1][0]]
                 logger.info(f'seg sw:{sw}')
                 for s in sw:
                     tslots.append(s)
@@ -85,11 +87,13 @@ class UService():
             sw = [s for s in segs if s[0] == w] # s: [stext: [stype]]
             logger.info(f'sw:{sw}')
             if sw:
-                s_retro_type = [s_type for s_type in sw[0][1] if d_text_type[w] in s_type]
+                s_retro_type = [s_type for s_type in sw[0][1]
+                     if d_text_type[w] in s_type]
                 if s_retro_type:
                     logger.info('s_retro_type:{}'.format(s_retro_type))
                     if len(s_retro_type) != 1:
-                        logger.error('multiple retro slot type matched: {}'.format(s_retro_type))
+                        logger.error('multiple retro slot type matched: {}'.format(
+                            s_retro_type))
                     tslots.append([s_retro_type[0], w])
                     continue
 
@@ -102,8 +106,25 @@ class UService():
             cname = []
             for rule in self.smap[w_type]:
                 if rule.startswith('equal'):
-                    if w == rule.split('.')[-1]:
+                    if w == rule.split('.')[-1] and \
+                        self.smap[w_type][rule] == 'slot.toremove':
+                        cname = []
                         break
+                if rule.startswith('unequal'):
+                    tomatch = rule.split('.')[-1]
+                    if len(w) == len(tomatch) and w != tomatch and \
+                        self.smap[w_type][rule] == 'slot.toremove':
+                        cname = []
+                        break
+                if rule.startswith('startswith') and 'slot.removeit' == self.smap[w_type][rule]:
+                    if w.startswith(rule.split('.')[-1]):
+                        w = w.lstrip(rule.split('.')[-1])
+                if rule.startswith('with.slot') and 'slot.removeit' == self.smap[w_type][rule]:
+                    sw = [[s[1][0], s[0]] for s in segs
+                        if s[0] in w and len(s[1])==1 and rule.split('.', 1)[1] == s[1][0]]
+                    if sw and w.endswith(sw[0][1]):
+                        tslots.append(sw[0])
+                        w = w.rstrip(sw[0][1])
                 if rule.startswith('left.with'):
                     if i > 0 and rule.split('.')[-1] in text[i - 1]:
                         cname.append(self.smap[w_type][rule])
@@ -143,6 +164,8 @@ class DMatchServicer(rpc.DMatchServicer):
         rsp = pb.RepBody()
         rsp.domain = tdomain
         rsp.intent = tintent
+        rsp.status = 0
+        rsp.errmsg = ''
         for aslot in tslots:
             oneslot = pb.Slot()
             oneslot.sname = aslot[0]
